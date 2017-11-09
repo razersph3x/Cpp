@@ -1,0 +1,22 @@
+#include<cstdlib>
+#include<iostream>
+#include<fstream>
+#include<string>
+#include<cmath>
+#include<ctime>
+
+using namespace std;
+int main () {
+int s;
+char* ch;
+ifstream in("2.txt",ios::binary); if(!in) cerr<<"2.txt не открыт!\n",exit(2);
+in.seekg(0,ios::end);s=in.tellg();in.seekg(0,ios::beg);
+ch = new char [s+1];
+ch [s] = 0;
+in.read (ch,s);
+in.close();
+//cout<<ch<<endl;
+cout<<"s = "<<s<<endl;
+delete [] ch ; 
+return 0;
+}
